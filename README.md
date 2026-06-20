@@ -1,0 +1,1 @@
+# spolocna-cesta
