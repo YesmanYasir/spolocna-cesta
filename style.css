@@ -142,11 +142,12 @@ img,svg{ display:block; }
   position: relative;
 }
 
-.brand-mark{
-  width:64px; height:64px;
-  margin-bottom:18px;
-  object-fit: contain;
+.brand-mark {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #E8C384;
 }
 
 .brand-name{
