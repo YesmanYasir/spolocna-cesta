@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt — Spoločná cesta</title>
+<meta name="description" content="Napíšte nám alebo nás kontaktujte priamo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="wrap">
+
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+    Späť na odkazy
+  </a>
+
+  <header class="brand" style="margin-bottom:32px;">
+    <h1 class="brand-name">Kontakt</h1>
+    <p class="brand-tagline">Sme tu pre vás — napíšte nám.</p>
+  </header>
+
+  <!-- ---- Priame kontaktné údaje ---- -->
+  <section class="card">
+    <h2 class="card-title">Priamy kontakt</h2>
+
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h18v11H3z"/><path d="M3 7l9 6 9-6"/></svg>
+      <div>
+        <p class="contact-label">E-mail</p>
+        <p class="contact-value"><a href="mailto:info@spolocnacesta.sk">info@spolocnacesta.sk</a></p>
+      </div>
+    </div>
+
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5c0 8.5 7 15.5 15.5 15.5l1-3.6-4.4-1.5-1.6 1.9a13 13 0 0 1-6.8-6.8l1.9-1.6L8.1 3.5z"/></svg>
+      <div>
+        <p class="contact-label">Telefón</p>
+        <p class="contact-value"><a href="tel:+421900000000">+421 900 000 000</a></p>
+      </div>
+    </div>
+
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 1 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+      <div>
+        <p class="contact-label">Adresa</p>
+        <p class="contact-value">Ulica 1, 811 01 Bratislava</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Formulár ---- -->
+  <section class="card">
+    <h2 class="card-title">Napíšte nám správu</h2>
+
+    <form id="contactForm" action="mailto:info@spolocnacesta.sk" method="POST" enctype="text/plain">
+      <div class="field">
+        <label for="name">Meno</label>
+        <input id="name" name="Meno" type="text" placeholder="Vaše meno" required>
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" name="Email" type="email" placeholder="vas@email.sk" required>
+      </div>
+      <div class="field">
+        <label for="message">Správa</label>
+        <textarea id="message" name="Sprava" rows="4" placeholder="Napíšte nám, s čím vám môžeme pomôcť…" required></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Odoslať správu</button>
+    </form>
+
+    <p class="form-note">
+      Po kliknutí na „Odoslať" sa otvorí váš e-mailový klient s predvyplnenou správou.
+    </p>
+  </section>
+
+  <footer class="foot">
+    <p class="foot-credit">© 2026 Spoločná cesta</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

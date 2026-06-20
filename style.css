@@ -1,0 +1,371 @@
+/* ==========================================================================
+   Spoločná cesta — link & kontakt sayfaları
+   Design concept: "the path" — a winding trail connecting every stop.
+   ========================================================================== */
+
+:root{
+  --forest:        #16261F;
+  --forest-soft:    #1F362C;
+  --forest-card:    #24403A;
+  --gold:           #D8A859;
+  --gold-soft:      #E8C384;
+  --sage:           #8FB996;
+  --cream:          #F6F1E4;
+  --clay:           #C1684B;
+  --muted:          #B9C4BC;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --container: 460px;
+  --radius-lg: 22px;
+  --radius-md: 14px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+html{ background: var(--forest); }
+
+body{
+  margin:0;
+  min-height:100svh;
+  background-color: var(--forest);
+  background-image: radial-gradient(circle at 50% 0%, rgba(216,168,89,0.10), rgba(216,168,89,0) 60%);
+  color: var(--cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a{ color:inherit; text-decoration:none; }
+
+img,svg{ display:block; }
+
+::selection{ background: var(--gold); color: var(--forest); }
+
+:focus-visible{
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.wrap{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 24px 40px;
+  position: relative;
+}
+
+/* ---------- Header / wordmark ---------- */
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  margin-bottom: 44px;
+}
+
+.brand-mark{
+  width:54px; height:54px;
+  margin-bottom:18px;
+}
+
+.brand-name{
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 7vw, 2.4rem);
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin:0;
+}
+
+.brand-tagline{
+  margin-top:10px;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-family: var(--font-display);
+  color: var(--sage);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- The path / trail of links ---------- */
+
+.trail{
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 8px;
+}
+
+.trail::before{
+  content:"";
+  position:absolute;
+  top: 26px;
+  bottom: 26px;
+  left: 27px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--gold) 0px, var(--gold) 6px,
+    transparent 6px, transparent 14px
+  );
+  opacity: 0.55;
+}
+
+.stop{
+  position: relative;
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.stop:last-child{ margin-bottom:0; }
+
+.stop-marker{
+  flex: 0 0 auto;
+  position: relative;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--forest-soft);
+  border: 1.5px solid rgba(216,168,89,0.35);
+  z-index: 1;
+}
+
+.stop-marker svg{ width:24px; height:24px; }
+
+.stop-link{
+  flex: 1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  background: var(--forest-card);
+  border: 1px solid rgba(246,241,228,0.06);
+  border-radius: var(--radius-md);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.stop-link:hover,
+.stop-link:focus-visible{
+  transform: translateX(3px);
+  background: #2A4940;
+  border-color: rgba(216,168,89,0.4);
+}
+
+.stop-link:active{ transform: translateX(1px) scale(0.99); }
+
+.stop-text{
+  display:flex;
+  flex-direction:column;
+  gap: 2px;
+  min-width:0;
+}
+
+.stop-eyebrow{
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  font-weight: 600;
+}
+
+.stop-title{
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.stop-arrow{
+  flex: 0 0 auto;
+  width: 18px; height:18px;
+  color: var(--muted);
+  transition: transform .18s ease, color .18s ease;
+}
+
+.stop-link:hover .stop-arrow{
+  transform: translateX(3px);
+  color: var(--gold);
+}
+
+/* ---------- Footer ---------- */
+
+.foot{
+  margin-top: 48px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 14px;
+  text-align:center;
+}
+
+.foot-flag{ width:26px; height:26px; color: var(--clay); }
+
+.foot-link{
+  font-size:0.85rem;
+  color: var(--sage);
+  border-bottom: 1px solid rgba(143,185,150,0.4);
+  padding-bottom:1px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.foot-link:hover{ color: var(--gold-soft); border-color: var(--gold-soft); }
+
+.foot-credit{
+  font-size:0.72rem;
+  color: rgba(185,196,182,0.55);
+  margin-top:6px;
+}
+
+/* ---------- Contact page ---------- */
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.85rem;
+  color: var(--sage);
+  margin-bottom: 30px;
+}
+.back-link svg{ width:16px; height:16px; }
+.back-link:hover{ color: var(--gold-soft); }
+
+.card{
+  background: var(--forest-card);
+  border: 1px solid rgba(246,241,228,0.06);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  margin-bottom: 18px;
+}
+
+.card-title{
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight:600;
+  margin: 0 0 16px;
+  color: var(--gold-soft);
+}
+
+.contact-row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(246,241,228,0.07);
+}
+.contact-row:first-of-type{ border-top:none; padding-top:0; }
+
+.contact-row svg{
+  width:20px; height:20px;
+  flex:0 0 auto;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.contact-label{
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 3px;
+}
+
+.contact-value{
+  font-size: 0.98rem;
+  color: var(--cream);
+  word-break: break-word;
+}
+.contact-value a:hover{ color: var(--gold-soft); }
+
+.field{
+  margin-bottom: 16px;
+}
+
+.field label{
+  display:block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.field input,
+.field textarea{
+  width:100%;
+  background: var(--forest-soft);
+  border: 1px solid rgba(246,241,228,0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--cream);
+  resize: vertical;
+  transition: border-color .15s ease;
+}
+.field input::placeholder,
+.field textarea::placeholder{ color: rgba(185,196,182,0.45); }
+.field input:focus,
+.field textarea:focus{ outline:none; border-color: var(--gold); }
+
+.submit-btn{
+  width:100%;
+  padding: 14px 18px;
+  background: var(--gold);
+  color: var(--forest);
+  border:none;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  cursor:pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+.submit-btn:hover{ background: var(--gold-soft); }
+.submit-btn:active{ transform: scale(0.99); }
+
+.form-note{
+  font-size: 0.76rem;
+  color: rgba(185,196,182,0.6);
+  margin-top: 12px;
+  line-height:1.5;
+}
+
+/* ---------- Motion ---------- */
+
+@media (prefers-reduced-motion: no-preference){
+  .stop{
+    opacity:0;
+    animation: rise .55s ease forwards;
+  }
+  .stop:nth-child(1){ animation-delay: .05s; }
+  .stop:nth-child(2){ animation-delay: .12s; }
+  .stop:nth-child(3){ animation-delay: .19s; }
+  .stop:nth-child(4){ animation-delay: .26s; }
+  .stop:nth-child(5){ animation-delay: .33s; }
+  .stop:nth-child(6){ animation-delay: .40s; }
+
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(10px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  .brand{ animation: fadeIn .6s ease; }
+  @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .stop-link, .stop-arrow, .submit-btn{ transition:none; }
+}
+
+@media (max-width: 360px){
+  .stop-marker{ width:48px; height:48px; }
+  .stop-marker svg{ width:20px; height:20px; }
+  .wrap{ padding: 40px 18px 32px; }
+}
