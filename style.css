@@ -71,6 +71,9 @@ img,svg{ display:block; }
 .brand-mark{
   width:54px; height:54px;
   margin-bottom:18px;
+  border-radius: 50%;
+  object-fit: cover;
+
 }
 
 .brand-name{
