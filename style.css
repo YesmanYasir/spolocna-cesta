@@ -145,7 +145,7 @@ img,svg{ display:block; }
 .brand-mark {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 20%;
   object-fit: cover;
   border: 2px solid #E8C384;
 }
